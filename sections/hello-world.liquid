@@ -3,7 +3,6 @@
     <h1>FREE PDF: 25 MOST POPULAR TRADES OF 2025</h1>
     <p>Level up fast. Download your blueprint — salary ladders, gear picks, and ATS cheat codes.</p>
 
-    <!-- Shopify Form Embed -->
     <form method="post" action="/contact#contact_form" id="hero-signup" class="hero-form">
       <input type="email" name="contact[email]" placeholder="Enter your email" required>
       <button type="submit" class="hero-cta">GET FREE PDF</button>
@@ -15,10 +14,38 @@
 
 <style>
   .th-hero {
+    position: relative;
     background: linear-gradient(to bottom, #000000 0%, #0A1A2F 100%);
-    padding: 100px 20px;
-    text-align: center;
     color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    overflow: hidden;
+  }
+
+  /* Brick base layer */
+  .th-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://cdn.shopify.com/s/files/1/0755/4046/3871/files/dave-webb-Ny7UDRl2LZY-unsplash.jpg?v=1755837856') center/cover no-repeat;
+    opacity: 0.25; /* adjust transparency */
+    z-index: 0;
+  }
+
+  /* Paint splatter overlay */
+  .th-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://cdn.shopify.com/s/files/1/0755/4046/3871/files/pngwing.com.png?v=1755837837') center/contain no-repeat;
+    opacity: 0.45;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2; /* keep text/forms above overlays */
   }
 
   .th-hero h1 {
@@ -72,4 +99,7 @@
   .disclaimer {
     display: block;
     margin-top: 15px;
-    font-size: 0.
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+</style>
