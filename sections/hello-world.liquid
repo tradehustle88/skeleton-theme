@@ -1,6 +1,7 @@
 <section id="th-hero" class="th-hero">
   <div class="th-hero-inner">
     <div class="th-hero-poster">
+      <div class="hero-glow"></div>
       <img 
         src="https://cdn.shopify.com/s/files/1/0755/4046/3871/files/3f387101-e3e1-42de-aee3-05054b42e18b_832f33d1-2f20-43de-a3f5-e65a7779d32f.png?v=1755842635" 
         alt="Trade Hustle Forever Bag – 25 Top Trades of 2025" 
@@ -17,20 +18,53 @@
 </section>
 
 <style>
+  :root {
+    --hustle-red: #E10600;
+    --hustle-yellow: #FFD700;
+    --electric-blue: #0099FF;
+    --jet-black: #000000;
+  }
+
+  /* Hero base */
   .th-hero {
     position: relative;
-    background: linear-gradient(to bottom, #000000, #0b1a33);
+    background: linear-gradient(to bottom, var(--jet-black), #0b1a33);
     text-align: center;
     padding: 3rem 1rem;
+    overflow: hidden;
+  }
+
+  /* Brick texture overlay */
+  .th-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("https://cdn.shopify.com/s/files/1/0755/4046/3871/files/file_0000000080e061f687f12737871e1b30.png?v=1755831340") center/cover no-repeat;
+    opacity: 0.12;
+    z-index: 1;
+  }
+
+  /* Paint splatter overlay */
+  .th-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("https://cdn.shopify.com/s/files/1/0755/4046/3871/files/paint_splatter.png?v=1755831500") center/contain no-repeat;
+    opacity: 0.25;
+    mix-blend-mode: screen;
+    z-index: 2;
   }
 
   .th-hero-inner {
     max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    z-index: 3;
   }
 
   .th-hero-poster {
     margin-bottom: 2rem;
+    position: relative;
   }
 
   .th-hero-img {
@@ -38,8 +72,31 @@
     margin: 0 auto;
     max-width: 100%;
     height: auto;
+    filter: drop-shadow(0 0 12px var(--electric-blue));
+    position: relative;
+    z-index: 2;
   }
 
+  /* Orbital glow */
+  .hero-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220%;
+    height: 220%;
+    background: radial-gradient(circle, rgba(0,153,255,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbitGlow 15s linear infinite;
+    z-index: 1;
+  }
+
+  @keyframes orbitGlow {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  /* Form styles */
   .th-hero-cta form {
     display: flex;
     justify-content: center;
@@ -49,14 +106,16 @@
 
   .th-hero-cta input[type="email"] {
     padding: 0.75rem;
-    border: 2px solid #FFD700;
+    border: 2px solid var(--hustle-yellow);
     border-radius: 4px;
     width: 280px;
     max-width: 100%;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
   }
 
   .th-hero-cta button {
-    background: #E10600;
+    background: var(--hustle-red);
     color: #fff;
     border: none;
     padding: 0.75rem 1.25rem;
@@ -64,9 +123,12 @@
     font-weight: bold;
     cursor: pointer;
     transition: 0.2s ease;
+    box-shadow: 0 0 12px var(--hustle-red);
   }
 
   .th-hero-cta button:hover {
     background: #ff2a2a;
+    box-shadow: 0 0 20px var(--hustle-red);
   }
 </style>
+
