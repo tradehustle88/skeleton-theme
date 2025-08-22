@@ -1,105 +1,72 @@
-<section class="th-hero">
-  <div class="hero-content">
-    <h1>FREE PDF: 25 MOST POPULAR TRADES OF 2025</h1>
-    <p>Level up fast. Download your blueprint — salary ladders, gear picks, and ATS cheat codes.</p>
-
-    <form method="post" action="/contact#contact_form" id="hero-signup" class="hero-form">
-      <input type="email" name="contact[email]" placeholder="Enter your email" required>
-      <button type="submit" class="hero-cta">GET FREE PDF</button>
-    </form>
-
-    <small class="disclaimer">No spam. Built for the Trade. Backed by Hustle.</small>
+<section id="th-hero" class="th-hero">
+  <div class="th-hero-inner">
+    <div class="th-hero-poster">
+      <img 
+        src="https://cdn.shopify.com/s/files/1/0755/4046/3871/files/3f387101-e3e1-42de-aee3-05054b42e18b_832f33d1-2f20-43de-a3f5-e65a7779d32f.png?v=1755842635" 
+        alt="Trade Hustle Forever Bag – 25 Top Trades of 2025" 
+        class="th-hero-img"
+      />
+    </div>
+    <div class="th-hero-cta">
+      <form method="post" action="/contact#contact_form" id="hero-form">
+        <input type="email" name="contact[email]" placeholder="Enter your email" required>
+        <button type="submit">GET FREE PDF</button>
+      </form>
+    </div>
   </div>
 </section>
 
 <style>
   .th-hero {
     position: relative;
-    background: linear-gradient(to bottom, #000000 0%, #0A1A2F 100%);
-    color: #fff;
+    background: linear-gradient(to bottom, #000000, #0b1a33);
     text-align: center;
-    padding: 100px 20px;
-    overflow: hidden;
+    padding: 3rem 1rem;
   }
 
-  /* Brick base layer */
-  .th-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url('https://cdn.shopify.com/s/files/1/0755/4046/3871/files/dave-webb-Ny7UDRl2LZY-unsplash.jpg?v=1755837856') center/cover no-repeat;
-    opacity: 0.25; /* adjust transparency */
-    z-index: 0;
+  .th-hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
   }
 
-  /* Paint splatter overlay */
-  .th-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url('https://cdn.shopify.com/s/files/1/0755/4046/3871/files/pngwing.com.png?v=1755837837') center/contain no-repeat;
-    opacity: 0.45;
-    z-index: 1;
-    pointer-events: none;
+  .th-hero-poster {
+    margin-bottom: 2rem;
   }
 
-  .hero-content {
-    position: relative;
-    z-index: 2; /* keep text/forms above overlays */
+  .th-hero-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
   }
 
-  .th-hero h1 {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: #FFD700;
-    text-shadow: 0 0 10px #E10600;
-    margin-bottom: 15px;
-  }
-
-  .th-hero p {
-    font-size: 1.1rem;
-    color: #00AEEF;
-    margin-bottom: 30px;
-  }
-
-  .hero-form {
+  .th-hero-cta form {
     display: flex;
     justify-content: center;
+    gap: 0.5rem;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
   }
 
-  .hero-form input[type="email"] {
-    padding: 12px;
-    border-radius: 6px;
-    border: none;
-    min-width: 280px;
+  .th-hero-cta input[type="email"] {
+    padding: 0.75rem;
+    border: 2px solid #FFD700;
+    border-radius: 4px;
+    width: 280px;
+    max-width: 100%;
   }
 
-  .hero-cta {
+  .th-hero-cta button {
     background: #E10600;
     color: #fff;
-    padding: 12px 30px;
-    font-weight: bold;
-    border-radius: 6px;
     border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    box-shadow: 0 0 10px #E10600;
+    transition: 0.2s ease;
   }
 
-  .hero-cta:hover {
-    background: #FFD700;
-    color: #000;
-    box-shadow: 0 0 15px #FFD700;
-  }
-
-  .disclaimer {
-    display: block;
-    margin-top: 15px;
-    font-size: 0.8rem;
-    color: #aaa;
+  .th-hero-cta button:hover {
+    background: #ff2a2a;
   }
 </style>
