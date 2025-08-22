@@ -34,35 +34,36 @@
   margin-top: 0.2rem;
 }
 
-.hamburger {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #FFD700;
-  cursor: pointer;
+/* Logo under subtitle */
+.th-header-logo {
+  margin-top: 0.5rem;
 }
 
-.search-icon {
-  font-size: 1.5rem;
-  color: #FFD700;
-  text-decoration: none;
+.th-header-logo img {
+  max-width: 140px; /* adjust size */
+  height: auto;
+  display: inline-block;
+  filter: drop-shadow(0 0 15px #FFD700);
 }
 {% endstylesheet %}
 
 <header class="th-header">
-  <!-- Left: Hamburger -->
   <div class="th-header-left">
-    <button class="hamburger" aria-label="Toggle Menu">☰</button>
+    <!-- Left slot: burger / menu -->
   </div>
 
-  <!-- Center: Brand statement -->
   <div class="th-header-center">
     <h1 class="th-header-title">WELCOME TO THE GRIND</h1>
-    <p class="th-header-subtitle">Built for the Trade. Backed by Hustle.</p>
+    <div class="th-header-subtitle">Built for the Trade. Backed by Hustle.</div>
+
+    <!-- Logo directly under subtitle -->
+    <div class="th-header-logo">
+      <img src="https://cdn.shopify.com/s/files/1/0755/4046/3871/files/20250821_1804_Gold_Glowing_Logo_remix_01k37dx7wwfg1se651zc24z0ty_1.png?v=1755817591" 
+           alt="Trade Hustle Logo">
+    </div>
   </div>
 
-  <!-- Right: Search -->
   <div class="th-header-right">
-    <a href="{{ routes.search_url }}" class="search-icon" aria-label="Search">🔍</a>
+    <!-- Right slot: search / icons -->
   </div>
 </header>
