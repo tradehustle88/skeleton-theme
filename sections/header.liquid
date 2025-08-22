@@ -10,7 +10,7 @@
     <!-- Center: Logo -->
     <div class="th-center">
       <img 
-        src="{{ 'trade-hustle-logo.png' | asset_url }}" 
+        src="{{ '20250821_1804_Gold_Glowing_Logo_remix_01k37dx7wwfg1se651zc24z0ty_1.png' | file_url }}" 
         alt="Trade Hustle Logo" 
         class="th-logo">
     </div>
@@ -35,13 +35,40 @@
   </div>
 </header>
 
+<!-- Slide-out Mobile Menu -->
+<nav class="th-mobile-menu" id="mobileMenu">
+  <button class="menu-close" aria-label="Close menu">&times;</button>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/collections/all">Shop</a></li>
+    <li><a href="/pages/resume-kit">Resume Kit</a></li>
+    <li><a href="/pages/book">Book Pre-Sale</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.querySelector('.menu-toggle');
+  const closeBtn = document.querySelector('.menu-close');
+  const menu = document.getElementById('mobileMenu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+</script>
+
 <style>
-/* ===========================
-   HEADER STYLING
-   =========================== */
 :root {
   --hustle-red: #E10600;
-  --hustle-yellow: #FFD700;
+  --hustle-gold: #FFD700;
   --electric-blue: #0099FF;
   --jet-black: #000000;
   --white: #FFFFFF;
@@ -63,43 +90,31 @@
   padding: 0 20px;
 }
 
-.th-left,
-.th-right {
+.th-left, .th-right {
   flex: 1;
   display: flex;
   align-items: center;
 }
-
-.th-left {
-  justify-content: flex-start;
-}
-
-.th-right {
-  justify-content: flex-end;
-}
-
-.th-center {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: center;
-}
+.th-left { justify-content: flex-start; }
+.th-right { justify-content: flex-end; }
+.th-center { flex: 0 0 auto; display: flex; justify-content: center; }
 
 .th-logo {
-  height: 70px;
+  max-width: 180px;
+  width: 100%;
+  height: auto;
   display: block;
   margin: 0 auto;
 }
 
-/* Hamburger */
 .menu-toggle {
   font-size: 26px;
-  color: var(--hustle-yellow);
+  color: var(--hustle-gold);
   background: none;
   border: none;
   cursor: pointer;
 }
 
-/* Search bar */
 .th-search {
   padding: 6px 10px;
   border-radius: 4px;
@@ -108,13 +123,8 @@
   color: var(--white);
   font-size: 14px;
 }
-.th-search::placeholder {
-  color: #ccc;
-}
+.th-search::placeholder { color: #ccc; }
 
-/* ===========================
-   TITLES
-   =========================== */
 .th-hero-title {
   text-align: center;
   margin-top: 20px;
@@ -124,35 +134,68 @@
   font-family: 'Anton', sans-serif;
   font-size: 42px;
   font-weight: 700;
-  color: var(--hustle-yellow);
-  text-shadow: 0 0 10px var(--hustle-red), 0 0 20px var(--hustle-red);
+  color: var(--hustle-gold);
   letter-spacing: 2px;
   margin-bottom: 8px;
+  text-shadow:
+    2px 2px 0 #000000,
+    4px 4px 0 #b8860b,
+    6px 6px 8px rgba(0,0,0,0.8);
 }
 
 .sub-title {
   font-family: 'Garamond', serif;
   font-size: 20px;
-  color: var(--electric-blue);
-  text-shadow: 0 0 8px var(--jet-black);
+  color: var(--hustle-gold);
   letter-spacing: 1px;
   margin: 0;
+  text-shadow:
+    -1px -1px 0 #000000,
+    1px 1px 0 #b8860b,
+    2px 2px 6px rgba(0,0,0,0.7);
 }
 
-/* MOBILE */
+.th-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  max-width: 280px;
+  height: 100%;
+  background: #000;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.6);
+  transition: left 0.3s ease;
+  z-index: 2000;
+  padding: 20px;
+}
+.th-mobile-menu.open { left: 0; }
+.th-mobile-menu .menu-close {
+  font-size: 28px;
+  color: var(--hustle-gold);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+}
+.th-mobile-menu ul {
+  list-style: none;
+  padding: 20px 0 0;
+  margin: 0;
+}
+.th-mobile-menu li { margin-bottom: 15px; }
+.th-mobile-menu a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.th-mobile-menu a:hover { color: var(--hustle-gold); }
+
 @media (max-width: 768px) {
-  .th-right {
-    display: none;
-  }
-  .th-logo {
-    height: 55px;
-  }
-  .main-title {
-    font-size: 32px;
-  }
-  .sub-title {
-    font-size: 16px;
-  }
+  .th-right { display: none; }
+  .th-logo { max-width: 140px; }
+  .main-title { font-size: 32px; }
+  .sub-title { font-size: 16px; }
 }
 </style>
-
