@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "hello-world",
+      "name": "Trade hustle hero",
       "settings": {}
     }
   },
