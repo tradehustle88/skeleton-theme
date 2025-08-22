@@ -14,9 +14,17 @@
       "disabled": true,
       "name": "Trade hustle hero",
       "settings": {}
+    },
+    "custom_section_zjHRWY": {
+      "type": "custom-section",
+      "name": "t:general.custom_section",
+      "settings": {
+        "background_image": "shopify://shop_images/3f387101-e3e1-42de-aee3-05054b42e18b_832f33d1-2f20-43de-a3f5-e65a7779d32f.png"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_section_zjHRWY"
   ]
 }
